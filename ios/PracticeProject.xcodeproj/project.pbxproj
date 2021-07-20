@@ -14,6 +14,7 @@
 		61903985B545A5BD2D7BE095 /* libPods-PracticeProject-PracticeProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC89962B00DFD113F033DD7 /* libPods-PracticeProject-PracticeProjectTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		912B01D1E20E1BD7B9AAC67E /* libPods-PracticeProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C63F52AF023721E82A1321 /* libPods-PracticeProject.a */; };
+		C7C00B8E26A69B8D009D4BF9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C00B8D26A69B8D009D4BF9 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PracticeProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E994CFC99DE31C74076CB96 /* Pods-PracticeProject-PracticeProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticeProject-PracticeProjectTests.release.xcconfig"; path = "Target Support Files/Pods-PracticeProject-PracticeProjectTests/Pods-PracticeProject-PracticeProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		C1B5D662495AA88445B26522 /* Pods-PracticeProject-PracticeProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticeProject-PracticeProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-PracticeProject-PracticeProjectTests/Pods-PracticeProject-PracticeProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C7C00B8C26A69B8D009D4BF9 /* PracticeProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PracticeProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		C7C00B8D26A69B8D009D4BF9 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F6C63F52AF023721E82A1321 /* libPods-PracticeProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PracticeProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,7 +117,6 @@
 				C1B5D662495AA88445B26522 /* Pods-PracticeProject-PracticeProjectTests.debug.xcconfig */,
 				9E994CFC99DE31C74076CB96 /* Pods-PracticeProject-PracticeProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,12 +130,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				C7C00B8D26A69B8D009D4BF9 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* PracticeProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PracticeProjectTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5D7E8BF8810B4F2CFD94D37D /* Pods */,
+				C7C00B8C26A69B8D009D4BF9 /* PracticeProject-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -208,7 +212,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -412,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				C7C00B8E26A69B8D009D4BF9 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1B5D662495AA88445B26522 /* Pods-PracticeProject-PracticeProjectTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E994CFC99DE31C74076CB96 /* Pods-PracticeProject-PracticeProjectTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = PracticeProjectTests/Info.plist;
@@ -486,6 +493,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = PracticeProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -498,6 +506,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PracticeProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "PracticeProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -511,6 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = PracticeProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,6 +533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PracticeProject;
+				SWIFT_OBJC_BRIDGING_HEADER = "PracticeProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
