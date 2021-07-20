@@ -1,9 +1,14 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Provider} from 'react-redux';
+import {store} from './state/state';
 import {Counter} from './ui/screens/counter-screen';
 
 const App = () => {
-  return <Counter />;
+  return (
+    <Provider store={store}>
+      <Counter />
+    </Provider>
+  );
 };
 
 export default App;

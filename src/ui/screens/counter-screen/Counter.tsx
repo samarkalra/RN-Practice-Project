@@ -7,17 +7,20 @@ import {
   Platform,
 } from 'react-native';
 import {appStyles} from '../../../core/constants/appStyles';
+import {useAppDispatch, useAppSelector} from '../../../core/hooks/storeHooks';
+import {decrement, increment} from '../../../state/reducers/counterSlice';
 import {styles} from './style';
 
 const Counter = () => {
-  const [counter, setCounter] = useState<number>(0);
+  const counter = useAppSelector(state => state.counter.value);
+  const dispatch = useAppDispatch();
 
   const incrementCounter = () => {
-    setCounter(currentCounter => currentCounter + 1);
+    dispatch(increment());
   };
 
   const decrementCounter = () => {
-    setCounter(currentCounter => currentCounter - 1);
+    dispatch(decrement());
   };
 
   return (
