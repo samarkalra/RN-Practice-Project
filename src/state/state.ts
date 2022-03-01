@@ -1,8 +1,4 @@
-import {
-  combineReducers,
-  configureStore,
-  getDefaultMiddleware,
-} from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import counterReducer from './reducers/counterSlice';
 import {persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -31,20 +27,19 @@ const rootReducer = combineReducers({
 
 /* ************ Saga Middleware ************ */
 const sagaMiddleware = createSagaMiddleware();
-const storeMiddleware = [
-  ...getDefaultMiddleware({
-    thunk: false,
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),
-  sagaMiddleware,
-];
 
 /* ************ Store ************ */
 const store = configureStore({
   reducer: rootReducer,
-  middleware: storeMiddleware,
+  middleware: getDefaultMiddleware => [
+    ...getDefaultMiddleware({
+      thunk: false,
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+    sagaMiddleware,
+  ],
 });
 
 sagaMiddleware.run(rootSaga);
